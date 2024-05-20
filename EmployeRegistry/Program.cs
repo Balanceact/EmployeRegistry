@@ -1,4 +1,12 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+/*
+    1. Vilka klasser bör ingå i programmet?
+    Svar: En: Employee
+
+    2. Vilka attribut och metoder bör ingå i dessa klasser?
+    Svar: 3 atribut (förnamn, efternamn och lön) och 2 metoder (en för inmatning, en för registerutskrift). 
+ */
+
 
 namespace EmployeRegistry
 {
@@ -23,12 +31,12 @@ namespace EmployeRegistry
             string result = Console.ReadLine();
             if (result == "1")
             {
-                AddEmployee();
+                Employee.AddEmployee();
                 return true;
             }
             else if (result == "2")
             {
-                PrintRegistry();
+                Employee.PrintRegistry();
                 return true;
             }
             else if (result == "3")
@@ -40,6 +48,13 @@ namespace EmployeRegistry
                 return true;
             }
         }
+    }
+
+    internal class Employee
+    {
+        public string firstName;
+        public string lastName;
+        public int salary;
 
         private static void AddEmployee()
         {
@@ -60,12 +75,5 @@ namespace EmployeRegistry
         {
 
         }
-    }
-
-    internal class Employee
-    {
-        public string firstName;
-        public string lastName;
-        public int salary;
     }
 }
